@@ -1,0 +1,642 @@
+/* ============ Family Dental Care — Pure CSS (No Bootstrap) ============ */
+
+/* Variables */
+:root {
+  --textprimary: #06A3DA;
+  --topprimary: #5de792;
+  --primary: #13793d;
+  --secondary: #F57E57;
+  --light: #EEF9FF;
+  --dark: #0e2444;
+  --accent: #f70bb0;
+  --bg: linear-gradient(to top left, rgb(1, 17, 88), rgb(134, 227, 240));
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --shadow: 0 10px 25px rgba(0, 0, 0, .15);
+}
+
+/* Reset */
+* {
+  box-sizing: border-box
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0
+}
+
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+  background: var(--bg);
+  color: #0b1431;
+}
+
+/* Utilities */
+.container {
+  max-width: 1100px;
+  margin-inline: auto;
+  padding: 0 16px
+}
+
+.narrow {
+  max-width: 760px
+}
+
+.muted {
+  opacity: .85
+}
+
+/* Topbar */
+.topbar {
+  background: #f3fbff;
+  border-bottom: 1px solid rgba(0, 0, 0, .06);
+  font-size: .95rem
+}
+
+.topbar__wrap {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 44px;
+}
+
+.topbar__contact {
+  display: flex;
+  gap: 16px;
+}
+
+.topbar__contact a {
+  text-decoration: none;
+}
+
+.topbar__contact a:hover {
+  color: var(--textprimary)
+}
+
+/* Header / Nav */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #fff;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  transition: box-shadow .2s ease;
+}
+
+.site-header.is-stuck {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, .1)
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 70px;
+  border-bottom: 5px solid rgba(2, 2, 2, .1)
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none
+}
+
+.brand__icon {
+  font-size: 1.4rem
+}
+
+.brand__name {
+  font-weight: 800;
+  color: var(--textprimary);
+  letter-spacing: .3px
+}
+
+.nav__menu {
+  display: flex;
+  align-items: center;
+  gap: 16px
+}
+
+.nav__link {
+  padding: 10px 12px;
+  color: #0b1431;
+  text-decoration: none;
+  border-radius: 12px;
+  transition: .2s
+}
+
+.nav__link:hover {
+  background: rgba(0, 0, 0, .05)
+}
+
+.nav__link.active {
+  color: var(--textprimary)
+}
+
+.nav__btn {
+  padding: 10px 16px;
+  border-radius: 14px;
+  background: var(--textprimary);
+  color: #fff;
+  text-decoration: none;
+  transition: .2s
+}
+
+.nav__btn:hover {
+  background: var(--secondary)
+}
+
+/* Mobile nav toggle */
+.nav__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer
+}
+
+.nav__toggle span {
+  width: 26px;
+  height: 2px;
+  background: #0b1431;
+  display: block;
+  border-radius: 1px
+}
+
+@media (max-width: 840px) {
+  .nav__toggle {
+    display: flex
+  }
+
+  .nav__menu {
+    position: fixed;
+    inset: 70px 0 auto 0;
+    background: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, .08);
+    padding: 12px 16px;
+    display: none;
+    flex-direction: column;
+    gap: 4px
+  }
+
+  .nav__menu.open {
+    display: flex
+  }
+
+  .nav__btn {
+    display: inline-block
+  }
+}
+
+/* Hero */
+.hero {
+  padding: 36px 0 12px
+}
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 24px;
+  align-items: stretch
+}
+
+.hero__text h1 {
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.1;
+  margin: 0 0 8px
+}
+
+.hero__text h1 span {
+  color: var(--textprimary)
+}
+
+.hero__text p {
+  font-size: 1.05rem;
+  margin: 0 0 16px
+}
+
+.hero__cta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap
+}
+
+.hero__card {
+  background: #fff;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow);
+  padding: 18px
+}
+
+.hero__card h3 {
+  margin: .2rem 0 .3rem
+}
+
+.hero__card p {
+  margin: .2rem 0 1rem
+}
+
+@media (max-width: 900px) {
+  .hero__grid {
+    grid-template-columns: 1fr
+  }
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  border: none;
+  cursor: pointer
+}
+
+.btn--primary {
+  background: var(--primary);
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 14px;
+  box-shadow: var(--shadow)
+}
+
+.btn--primary:hover {
+  background: #0f6a35
+}
+
+.btn--ghost {
+  padding: 12px 16px;
+  border-radius: 14px;
+  background: transparent;
+  color: #0b1431;
+  border: 2px solid rgba(0, 0, 0, .15)
+}
+
+.btn--ghost:hover {
+  border-color: #0b1431
+}
+
+.btn--small {
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: var(--textprimary);
+  color: #fff;
+  text-decoration: none
+}
+
+.btn--small:hover {
+  background: var(--secondary)
+}
+
+/* Sections */
+.section {
+  padding: 36px 0
+}
+
+.section--alt {
+  background: #f7fbff
+}
+
+.section__title {
+  font-size: clamp(22px, 3.5vw, 34px);
+  margin: 0 0 18px
+}
+
+/* Cards Grid */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px
+}
+
+@media (max-width: 900px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background: #fff;
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform .2s ease, box-shadow .2s ease
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, .18)
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover
+}
+
+.card__body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px
+}
+
+.card__title {
+  margin: 0
+}
+
+/* Contact / Map */
+.contact {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 24px;
+  align-items: start
+}
+
+.contact__info {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: 18px
+}
+
+.socials {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px
+}
+
+.social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--textprimary);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700
+}
+
+.social:hover {
+  background: var(--secondary)
+}
+
+@media (max-width: 900px) {
+  .contact {
+    grid-template-columns: 1fr
+  }
+}
+
+/* Forms */
+.card--panel {
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  padding: 18px
+}
+
+.form__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px
+}
+
+.form__grid .full {
+  grid-column: 1/-1
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-weight: 600
+}
+
+input,
+select,
+textarea {
+  padding: 12px 12px;
+  border: 1.5px solid rgba(0, 0, 0, .15);
+  border-radius: 12px;
+  background: #fff;
+  outline: none;
+  font: inherit
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--textprimary);
+  box-shadow: 0 0 0 3px rgba(6, 163, 218, .12)
+}
+
+.form__actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  flex-wrap: wrap
+}
+
+/* Footer */
+.footer {
+  background: #051225;
+  color: #c9d7ff;
+  padding: 16px 0;
+  margin-top: 24px
+}
+
+.footer__grid {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap
+}
+
+.footer a {
+  color: #fff
+}
+
+.time {
+  opacity: .8
+}
+
+
+/* === Added by assistant === */
+
+/* === Global link reset === */
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none !important;
+}
+
+/* === Theme: Light/Dark toggle via [data-theme] === */
+:root {
+  --bg: #f6fbff;
+  --text: #0b1431;
+  --surface: #ffffff;
+  --surface-alt: #f7fbff;
+}
+
+[data-theme="dark"] {
+  --bg: #0b1431;
+  --text: #e6ecff;
+  --surface: #0f1b39;
+  --surface-alt: #0c1730;
+}
+
+/* Apply variables to layout */
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.site-header {
+  background: var(--surface);
+}
+
+.section--alt {
+  background: var(--surface-alt);
+}
+
+.card,
+.hero__card,
+.contact__info,
+.card--panel {
+  background: var(--surface);
+}
+
+.nav__menu {
+  background: var(--surface);
+}
+
+.btn--ghost {
+  color: var(--text);
+  border-color: rgba(255, 255, 255, .2);
+}
+
+
+/* Appointment page background with teeth image */
+body.appointment-page {
+  background: url("media/teeth-bg.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* Social icons */
+.social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  border-radius: 35%;
+  background: #ddd;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.social.facebook {
+  background: transparent;
+}
+
+.social.whatsapp {
+  background: transparent;
+}
+
+.social.instagram {
+  background: transparent;
+}
+
+.social.facebook:hover {
+  background: #0d5ac5;
+}
+
+.social.whatsapp:hover {
+  background: #128c7e;
+}
+
+.social.instagram:hover {
+  background: #ff1d82;
+}
+
+/*dark mode topbar*/
+[data-theme="dark"] .topbar,
+[data-them="dark"].topbar__contact,
+[data-them="dark"].topbar__contact a{
+ background-color: #051225;
+ color:var(--light);
+}
+
+/* Dark mode nav joinus button fix */
+[data-theme="dark"] .nav__link.active {
+  color: var(--textprimary);
+}
+
+[data-theme="dark"] .nav__btn {
+  background: var(--textprimary);
+}
+
+
+/* === Dark mode readability & icon fixes (added) === */
+[data-theme="dark"] .card,
+[data-theme="dark"] .card__body,
+[data-theme="dark"] .card__title,
+[data-theme="dark"] .card p,
+[data-theme="dark"] .card-body,
+[data-theme="dark"] .card-text {
+  color: var(--text) !important;
+}
+
+[data-theme="dark"] .hero__card,
+[data-theme="dark"] .contact__info {
+  color: var(--text) !important;
+}
+
+/* Ensure nav links and toggles are visible in dark mode */
+[data-theme="dark"] .nav__link {
+  color: var(--text) !important;
+}
+
+[data-theme="dark"] .nav__link:hover {
+  background: rgba(255, 255, 255, .06) !important;
+}
+
+[data-theme="dark"] .nav__link.active {
+  color: var(--textprimary) !important;
+}
+
+[data-theme="dark"] .nav__toggle span {
+  background: #e6ecff !important;
+}
+
+[data-theme="dark"] .brand__icon {
+  color: var(--text) !important;
+}
+
+/* Make Bootstrap icons (e.g., Join Us page moon/sun icon) inherit light color */
+.theme-toggle i {
+  color: var(--text) !important;
+}
+
+[data-theme="dark"] .bi {
+  color: var(--text) !important;
+}
+
+/* Ensure ghost buttons have visible border in dark */
+[data-theme="dark"] .btn--ghost {
+  border-color: rgba(255, 255, 255, .3) !important;
+}
