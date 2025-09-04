@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Join Us — Family Dental Care</title>
+  <link rel="icon" type="image/x-icon" href="fdc_L2.png">
+  <link rel="stylesheet" href="style.css"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="home.html"><span class="brand__icon">🦷</span><span class="brand__name">Family Dental Care</span></a>
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+
+    <!-- Theme toggle -->
+    <button class="theme-toggle btn btn--ghost ms-auto" type="button" aria-label="Toggle theme">
+      <i class="bi bi-moon"></i>
+    </button>
+      <nav class="nav__menu" role="navigation">
+        <a class="nav__link" href="home.html">Home</a>
+        <a class="nav__link active" href="joinus.html">Join Us</a>
+        <a class="nav__btn" href="appointment.html">Appointment</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container narrow">
+      <h1 class="section__title">Join Our Team</h1>
+      <p class="muted">We’re always looking for skilled, compassionate professionals. Apply below and we’ll get back to you.</p>
+
+      <form id="joinForm" class="form card--panel" action="submit_joinus.php" method="POST" enctype="application/x-www-form-urlencoded">
+        <div class="form__grid">
+          <label>Full Name
+            <input type="text" name="name" placeholder="Your name" required>
+          </label>
+          <label>Email
+            <input type="email" name="email" placeholder="you@example.com" required>
+          </label>
+          <label>Phone
+            <input type="tel" name="phone" placeholder="+91 9XXXXXXXXX" required>
+          </label>
+          <label>Role Applying For
+            <select name="role" required>
+              <option value="" disabled selected>Select a role</option>
+              <option>Dentist</option>
+              <option>Dental Assistant</option>
+              <option>Dental Hygienist</option>
+              <option>Front Office</option>
+              <option>Other</option>
+            </select>
+          </label>
+          <label>Experience (Years)
+            <input type="number" name="experience" min="0" max="40" step="1" placeholder="e.g., 3">
+          </label>
+          <label>LinkedIn / Portfolio (optional)
+            <input type="url" name="link" placeholder="https://">
+          </label>
+          <label class="full">Short Note
+            <textarea name="message" rows="5" placeholder="Tell us about yourself"></textarea>
+          </label>
+        </div>
+
+        <div class="form__actions">
+          <button type="submit" class="btn btn--primary">Submit Application</button>
+          <a href="home.html" class="btn btn--ghost">Back to Home</a>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <p>© <span id="year"></span> FamilyDentalCare.</p>
+      <p>Developed by <a href="developer.htm">freand's</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
